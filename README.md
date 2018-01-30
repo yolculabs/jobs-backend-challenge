@@ -1,32 +1,51 @@
-# Yolcu Backend Laravel Challenge
+# Senior-Backend-PHP-Challenge
 
-Senden temiz bir **Laravel** kurulumuna eklendiğinde çalışacak bir paket geliştirmeni istiyoruz. (kurulum için gereken artisan komutlarını da dökümante etmen gerekli)
+Senden temiz bir **Laravel** kurulumuna eklendiğinde çalışacak bir paket (kurulum için gereken artisan komutlarını da dökümante etmen gerekli), 5 ayrı php dosyasına da random ürün listesi eklenmiş json data istiyoruz.
 
-Bu paket temiz kurduğumuz yazılıma asgari olarak şu şekilde bir veritabanı şeması ekleyecek:
+Bu paket temiz kurduğumuz yazılıma asgari olarak şu yapı ve tabloları ekleyecek:
 
-### Hotels
+## TABLOLAR
 
-- id
-- hotel_name
+### Jobs
 
-### Countries
+id (int)
 
-- id
-- country_name
+JobId char(16)
 
-### Reviews
+### SearchData
 
-- id
-- text
+id
+
+name
+
+
+
+## CLASSES
+
+### Product Search
+
+* 5 PHP dosyasından ürün listesini çekecek. Ve veritabanına kaydedecek.
+
+### Itinerary
+
+* Farklı yapılardaki 5 JSON datayı tek bir biçime dönüştürüp kaydedecek.
+
+### Search Results
+
+* Database'den Jobs tablosunu ve searchdatayı relation olarak getirecek bir model kurulacak.
+
+
 
 
 ## Kurallar
 
-* Her bir Country'in içersinde birden fazla **Hotel** olabilir.
+* Her bir PHP dosyasında farklı yapılarda ürün listesi dataları yer alacak.
 
-* Her bir otel bir adet **Country**'e aittir.
+* Her bir ürün listesi için curl ile veri çekilecek ve her PHP dosyasında 5-9 sn arası sleep() yer alacak.
 
-* Hotel ve Country içersinde birden fazla **Review** eklenebilecektir, ve bu Review'lar aynı tablo'yu kullanacaktır(polimorfik ilişki)
+* Ürün aramaları 5 dosya ile aynı anda başlayacak ve arama başlamadan JobId üretilecek
+
+* SearchData için sorgu yapıldığında get işlemi tamamlananlar sonuç olarak dönülebilecek.
 
 bu değişiklikleri yapmak için yukarıda listelenen şemaya **bazı kolonlar eklemeniz** ve Eloquent Modellerine **bazı methodlar eklemeniz gerekecek**
 
